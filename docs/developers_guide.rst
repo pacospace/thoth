@@ -152,32 +152,9 @@ In most cases you will need to set ``THOTH_DEPLOYMENT_NAME`` environment variabl
 
 To browse data stored on Ceph, you can use ``awscli`` from `PyPI <https://pypi.org/project/awscli/>`_ utility which provides ``aws`` command (use ``aws s3`` as Ceph exposes S3 compatible API).
 
-To run applications against a graph database, export the following environment variables:
+To run applications against a graph database:
 
-.. code-block:: console
-
-  $ export DGRAPH_SERVICE_HOST=dgraph.thoth-station.ninja
-
-If the Dgraph is serving requests on different port (not usual in Thoth deployments), you can specify also port by exporting:
-
-.. code-block:: console
-
-  # Default port on which Dgraph instances listen on:
-  $ export DGRAPH_SERVICE_PORT=9080
-
-Deployments which are in stage/prod/test environment (or any other environment) are usually secured using TLS certificates which guard gRPC access to Dgraph instance. If you would like to communicate with sunch instance, you need to obtain TLS certificates and secure connection by exporting the following environment variable pointing to a directory which has all the certificates present:
-
-.. code-block:: console
-
-  $ export DGRAPH_TLS_PATH=tls/
-  $ ls tls/
-  ca.crt
-  ca.key
-  client.user.crt
-  client.user.key
-  node.crt
-  node.key
-
+...
 
 Running application inside OpenShift vs local development
 =========================================================
